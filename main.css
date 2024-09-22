@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    height: 80px;
+} */
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    position: fixed;  /* Fixes the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Ensures the navbar takes the full width */
+    z-index: 1000;  /* Ensures it stays above other content */
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.4em;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+}
+
+.bars {
+    display: none;
+    cursor: pointer;
+    font-size: 2em;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+
+a:hover {
+    color: #f90;
+}
+
+@media screen and (max-width: 800px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .bars {
+        display: block;
+    }
+}
